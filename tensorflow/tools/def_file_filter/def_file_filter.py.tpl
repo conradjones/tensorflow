@@ -46,7 +46,8 @@ DUMPBIN_CMD = "\"{}\" /SYMBOLS".format("%{dumpbin_bin_path}")
 EXCLUDE_RE = re.compile(r"RTTI|deleting destructor|::internal::")
 
 # Include if matched before exclude
-INCLUDEPRE_RE = re.compile(r"google::protobuf::internal::ExplicitlyConstructed|"
+INCLUDEPRE_RE = re.compile(r"google::protobuf::internal::MapFieldBase|"
+                           r"google::protobuf::internal::ExplicitlyConstructed|"
                            r"google::protobuf::internal::ArenaImpl::AllocateAligned|" # for contrib/data/_prefetching_ops
                            r"google::protobuf::internal::ArenaImpl::AddCleanup|" # for contrib/data/_prefetching_ops
                            r"google::protobuf::internal::LogMessage|" # for contrib/data/_prefetching_ops

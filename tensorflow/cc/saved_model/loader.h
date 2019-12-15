@@ -31,7 +31,7 @@ namespace tensorflow {
 /// Represents a SavedModel that is loaded from storage.
 class SavedModelBundleInterface {
  public:
-  virtual ~SavedModelBundleInterface();
+  TF_EXPORT virtual ~SavedModelBundleInterface();
 
   /// Returns the TensorFlow Session that can be used to interact with the
   /// SavedModel.
@@ -102,7 +102,7 @@ class SavedModelBundleLite : public SavedModelBundleInterface {
 /// *bundle with a session and the requested MetaGraphDef, if found.
 ///
 /// NOTE: Prefer the overload that takes a SavedModelBundleLite* in new code.
-Status LoadSavedModel(const SessionOptions& session_options,
+Status TF_EXPORT LoadSavedModel(const SessionOptions& session_options,
                       const RunOptions& run_options, const string& export_dir,
                       const std::unordered_set<string>& tags,
                       SavedModelBundle* const bundle);
@@ -114,7 +114,7 @@ Status LoadSavedModel(const SessionOptions& session_options,
 ///
 /// This overload creates a SavedModelBundleLite, which consumes less RAM than
 /// an equivalent SavedModelBundle.
-Status LoadSavedModel(const SessionOptions& session_options,
+Status TF_EXPORT LoadSavedModel(const SessionOptions& session_options,
                       const RunOptions& run_options, const string& export_dir,
                       const std::unordered_set<string>& tags,
                       SavedModelBundleLite* const bundle);

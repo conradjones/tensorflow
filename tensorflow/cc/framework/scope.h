@@ -98,7 +98,7 @@ struct CompositeOpScopes;
 class Scope {
  public:
   Scope(const Scope& other);
-  ~Scope();
+  TF_EXPORT ~Scope();
   Scope& operator=(const Scope& other);
 
   // The following functions are for users making graphs. They return brand new
@@ -107,7 +107,7 @@ class Scope {
   /// Return a new scope.
   /// This creates a new graph and all operations constructed in this graph
   /// should use the returned object as the "root" scope.
-  static Scope NewRootScope();
+  static TF_EXPORT Scope NewRootScope();
 
   /// Return a new scope. Ops created with this scope will have
   /// `name/child_scope_name` as the prefix. The actual name will be unique

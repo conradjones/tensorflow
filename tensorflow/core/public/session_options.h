@@ -17,6 +17,7 @@ limitations under the License.
 #define TENSORFLOW_PUBLIC_SESSION_OPTIONS_H_
 
 #include <string>
+#include "tensorflow/core/platform/macros.h"
 #include "tensorflow/core/platform/types.h"
 #include "tensorflow/core/protobuf/config.pb.h"
 
@@ -57,7 +58,7 @@ struct SessionOptions {
   /// Configuration options.
   ConfigProto config;
 
-  SessionOptions();
+  TF_EXPORT SessionOptions();
 };
 
 }  // end namespace tensorflow
