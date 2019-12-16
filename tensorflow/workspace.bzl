@@ -542,6 +542,7 @@ def tf_repositories(path_prefix = "", tf_repo_name = ""):
             "https://storage.googleapis.com/mirror.tensorflow.org/github.com/grpc/grpc/archive/4566c2a29ebec0835643b972eb99f4306c4234a3.tar.gz",
             "https://github.com/grpc/grpc/archive/4566c2a29ebec0835643b972eb99f4306c4234a3.tar.gz",
         ],
+        patch_file = clean_dep("//third_party/grpc:gettid.patch"),
     )
 
     tf_http_archive(
